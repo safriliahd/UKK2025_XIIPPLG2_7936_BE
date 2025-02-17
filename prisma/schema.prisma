@@ -32,7 +32,7 @@ model Task {
   categoryId Int
   task       String
   userId     Int
-  date       DateTime
+  date       DateTime  @default(now())
   status     Status @default(NOT_COMPLETE)
 
   category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
